@@ -1,0 +1,10 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: inherit;
+
+    height: 200px;
+    background: var(--gray-700);
+
+}

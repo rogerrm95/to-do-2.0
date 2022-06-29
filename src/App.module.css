@@ -1,0 +1,76 @@
+.App {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.App main {
+    display: flex;
+    gap: 1.5rem;
+
+    width: 100%;
+    max-width: 540px;
+}
+
+/* ADICIONAR TAREFA */
+.newTask {
+    margin-top: -2rem;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.newTask input {
+    height: 3.25rem;
+    width: 100%;
+    
+    padding: 1rem;
+
+    background: var(--gray-500);
+    color: var(--gray-100);
+    caret-color: var(--blue);
+    border-radius: 8px;
+    
+    box-shadow: inset 0 0 2px var(--gray-700);
+    outline: var(--purple);
+}
+
+.newTask input::placeholder {
+    color: var(--gray-300);
+}
+
+.newTask input:focus {
+    border: 1px solid var(--purple);
+}
+
+.newTask button {
+    width: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 3.25rem;
+
+    background: var(--blue-dark);
+    color: var(--gray-100);
+    border-radius: 8px;
+    font-size: 0.85rem;
+
+    transition: background 0.3s;
+}
+
+.newTask button:hover {
+    background: var(--blue);
+}
+
+.newTask button svg {
+    margin-left:  0.25rem;
+}
+
+/* CABEÇALHO */
+
+/* LISTA DE TAREFAS */
