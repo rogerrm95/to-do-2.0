@@ -1,0 +1,20 @@
+/* LISTA DE TAREFAS - Sem resultados */
+.noTasks {
+    height: 244px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+.noTasks svg {
+    color: var(--gray-400);
+}
+
+.noTasks p {
+    color: var(--gray-300);
+    line-height: 140%;
+}

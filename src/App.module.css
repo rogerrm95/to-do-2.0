@@ -1,5 +1,4 @@
 .App {
-    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,34 +6,43 @@
 }
 
 .App main {
-    display: flex;
-    gap: 1.5rem;
-
     width: 100%;
-    max-width: 540px;
+    max-width: 600px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-/* ADICIONAR TAREFA */
+/* TAREFAS - Container */
+.tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* ADICIONAR TAREFA - Input & Botão*/
 .newTask {
     margin-top: -2rem;
     width: 100%;
 
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .newTask input {
     height: 3.25rem;
     width: 100%;
-    
+
     padding: 1rem;
 
     background: var(--gray-500);
     color: var(--gray-100);
     caret-color: var(--blue);
     border-radius: 8px;
-    
+
     box-shadow: inset 0 0 2px var(--gray-700);
     outline: var(--purple);
 }
@@ -68,9 +76,41 @@
 }
 
 .newTask button svg {
-    margin-left:  0.25rem;
+    margin-left: 0.25rem;
 }
 
-/* CABEÇALHO */
+/* CABEÇALHO - Informações gerais */
+.summaryTasks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summaryTasks span {
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.summaryTasks .total span {
+    color: var(--blue);
+}
+
+.summaryTasks .progress span {
+    color: var(--purple);
+}
+
+.summaryTasks strong {
+    margin-left: 0.5rem;
+    padding: 2px 8px;
+    font-size: 0.75rem;
+
+    border-radius: 999px;
+    background-color: var(--gray-400);
+}
 
 /* LISTA DE TAREFAS */
+.todoList{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}

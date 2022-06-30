@@ -1,0 +1,73 @@
+/* LISTA DE TAREFAS */
+.taskItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+
+    height: 72px;
+    padding: 1rem;
+
+    background: var(--gray-400);
+    border-radius: 8px;
+
+    transition: background 0.3s;
+}
+
+.taskItem:hover{
+    background: var(--gray-500);
+}
+
+.taskItem p {
+    flex: 1;
+    font-size: 0.85rem;
+    line-height: 140%;
+    max-width: 85%;
+}
+
+.taskItem .textTicked {
+    text-decoration: line-through;
+    color: var(--gray-300)
+}
+
+/* Botões */
+.checkedButton, .checkButton{
+    height: 1rem;
+    width: 1rem;
+    border-radius: 9999px;
+}
+
+.checkButton {
+    border: 2px solid var(--blue);
+}
+
+.checkedButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    background: var(--purple-dark);
+}
+
+.checkedButton svg {
+    color: var(--gray-100);
+}
+
+.deleteButton {
+    height: 2rem;
+    width: 1.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--gray-100);
+    border-radius: 8px;
+    transition: background ease-in 0.2s;
+}
+
+.deleteButton:hover {
+    color: var(--danger);
+    background: var(--gray-500);   
+}
