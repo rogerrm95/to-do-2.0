@@ -3,14 +3,19 @@ import styles from './styles.module.css'
 
 // TYPES //
 interface TaskItemProps {
+    id: number
     name: string,
-    isDone: boolean
+    isDone: boolean,
+    onCheck: (id: number) => void,
+    onDelete: (id: number) => void,
 }
 
-export function TaskItem({ isDone, name }: TaskItemProps) {
+export function TaskItem({ id, isDone, name, onCheck, onDelete }: TaskItemProps) {
     return (
         <li className={styles.taskItem}>
-            <button className={isDone ? `${styles.checkedButton}` : `${styles.checkButton}`}>
+            <button
+                className={isDone ? `${styles.checkedButton}` : `${styles.checkButton}`}
+                onClick={() => onCheck(id)}>
                 {isDone && <FiCheck size={12} />}
             </button>
 
@@ -18,7 +23,7 @@ export function TaskItem({ isDone, name }: TaskItemProps) {
                 {name}
             </p>
 
-            <button className={styles.deleteButton}>
+            <button className={styles.deleteButton} onClick={() => onDelete(id)}>
                 <FiTrash size={16} />
             </button>
         </li>
