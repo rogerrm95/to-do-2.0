@@ -23,8 +23,8 @@ export function TaskItem({ id, isDone, name, onCheck, onDelete }: TaskItemProps)
                 {name}
             </p>
 
-            <button className={styles.deleteButton} onClick={() => onDelete(id)}>
-                <FiTrash size={16} />
+            <button className={styles.deleteButton} onClick={() => onDelete(id)} aria-label="delete">
+                <FiTrash size={16}/>
             </button>
         </li>
     )

@@ -15,7 +15,7 @@ type Task = {
   isDone: boolean
 }
 
-function App() {
+export function App() {
   const [tasks, setTasks] = useState<Task[]>([])
   const [task, setTask] = useState('')
   const [numberToCompletedTasks, setNumberToCompletedTasks] = useState(0)
