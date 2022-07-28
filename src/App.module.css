@@ -1,8 +1,13 @@
 .App {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 100%;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px 1fr 100px;
+    place-items: center;
+
 }
 
 .App main {
@@ -12,6 +17,7 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    align-self: flex-start;
 }
 
 /* TAREFAS - Container */

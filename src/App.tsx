@@ -7,6 +7,7 @@ import { NoResults } from './components/NoResults'
 // Styles // 
 import styles from './App.module.css'
 import { TaskItem } from './components/TaskItem'
+import { Footer } from './components/Footer'
 
 // TYPES //
 type Task = {
@@ -157,6 +158,8 @@ export function App() {
           }
         </div>
       </main>
+
+      <Footer />
     </div>
   )
 }
