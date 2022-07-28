@@ -68,11 +68,16 @@
     border-radius: 8px;
     font-size: 0.85rem;
 
-    transition: background 0.3s;
+    transition: background-color 0.3s;
 }
 
-.newTask button:hover {
+.newTask button:not(:disabled):hover {
     background: var(--blue);
+}
+
+.newTask button:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
 }
 
 .newTask button svg {

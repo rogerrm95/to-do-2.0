@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { FormEvent, useEffect, useState } from 'react'
 // Icones //
 import { FiCheck, FiPlusCircle, FiTrash } from 'react-icons/fi'
 // Componentes //
@@ -44,7 +44,9 @@ export function App() {
   }, [])
 
   // Adiciona uma nova tarefa //
-  function handleAddNewTask() {
+  function handleAddNewTask(e: FormEvent) {
+    e.preventDefault()
+
     if (task.trim().length === 0) {
       setTask('')
       return
@@ -100,8 +102,8 @@ export function App() {
     return sortedList
   }
 
-  // Há tarefas cadastradas ? //
   const hasTasks = tasks.length === 0
+  const hasTextInInput = task.length === 0
 
   return (
     <div className={styles.App}>
@@ -109,17 +111,18 @@ export function App() {
 
       <main>
 
-        <form className={styles.newTask}>
+        <form className={styles.newTask} onSubmit={handleAddNewTask}>
+
           <input
             type="text"
             placeholder='Adicione uma nova tarefa ...'
             value={task}
             onChange={(e) => setTask(e.target.value)} />
-          <button onClick={handleAddNewTask} type='button'>
+
+          <button type='button' disabled={hasTextInInput}>
             Criar <FiPlusCircle size={15} color="#F2F2F2" />
           </button>
         </form>
-
 
         <div className={styles.tasks}>
 
