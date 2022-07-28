@@ -64,7 +64,7 @@
 
     color: var(--gray-100);
     border-radius: 8px;
-    transition: background ease-in 0.2s;
+    transition: color ease-in 0.25s;
 }
 
 .deleteButton:hover {

@@ -12,8 +12,9 @@ interface TaskItemProps {
 
 export function TaskItem({ id, isDone, name, onCheck, onDelete }: TaskItemProps) {
     return (
-        <li className={styles.taskItem}>
+        <li className={styles.taskItem} onDoubleClick={() => onCheck(id)}>
             <button
+                aria-label="check"
                 className={isDone ? `${styles.checkedButton}` : `${styles.checkButton}`}
                 onClick={() => onCheck(id)}>
                 {isDone && <FiCheck size={12} />}
@@ -24,7 +25,7 @@ export function TaskItem({ id, isDone, name, onCheck, onDelete }: TaskItemProps)
             </p>
 
             <button className={styles.deleteButton} onClick={() => onDelete(id)} aria-label="delete">
-                <FiTrash size={16}/>
+                <FiTrash size={16} />
             </button>
         </li>
     )
