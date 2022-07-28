@@ -119,7 +119,7 @@ export function App() {
             value={task}
             onChange={(e) => setTask(e.target.value)} />
 
-          <button type='button' disabled={hasTextInInput}>
+          <button type='submit' disabled={hasTextInInput}>
             Criar <FiPlusCircle size={15} color="#F2F2F2" />
           </button>
         </form>
