@@ -16,7 +16,16 @@ type Task = {
 }
 
 export function App() {
-  const [tasks, setTasks] = useState<Task[]>([])
+  const [tasks, setTasks] = useState<Task[]>(() => {
+    const storage = localStorage.getItem('@todolist')
+
+    if (storage) {
+      const data = JSON.parse(storage)
+      return data
+    }
+
+    return []
+  })
   const [task, setTask] = useState('')
   const [numberToCompletedTasks, setNumberToCompletedTasks] = useState(0)
 
@@ -51,6 +60,7 @@ export function App() {
 
     setTasks(newList)
     setTask('')
+    localStorage.setItem("@todolist", JSON.stringify(newList))
   }
 
   // Marca uma tarefa como concluída ou desmarca //
@@ -68,12 +78,16 @@ export function App() {
 
     const sortedList = sortListToActiveTaskAtCompletedTask(newList)
     setTasks(sortedList)
+
+    localStorage.setItem("@todolist", JSON.stringify(sortedList))
   }
 
   // Exclui uma determinada tarefa da lista //
   function handleDeleteTask(idTask: number) {
     const newList = tasks.filter(task => task.id !== idTask)
     setTasks(newList)
+
+    localStorage.setItem("@todolist", JSON.stringify(newList))
   }
 
   // Ordena o array deixando as tarefas ativas em cima e as finalizadas em baixo //
@@ -85,6 +99,9 @@ export function App() {
 
     return sortedList
   }
+
+  // Há tarefas cadastradas ? //
+  const hasTasks = tasks.length === 0
 
   return (
     <div className={styles.App}>
@@ -119,8 +136,7 @@ export function App() {
           </div>
 
           { // Lista de Tarefas //
-            tasks.length === 0
-              ? <NoResults />
+            hasTasks ? <NoResults />
               :
               (
                 <ul className={styles.todoList}>
